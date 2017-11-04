@@ -17,8 +17,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.io.IOException;
 
 /**
@@ -138,7 +136,7 @@ public class HomeActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case GALLERY_CODE:
-                    SendPicture(data); //갤러리에서 가져오기
+                    SendPicture(data);
                     break;
                 default:
                     break;
@@ -150,7 +148,7 @@ public class HomeActivity extends AppCompatActivity {
     private void SendPicture(Intent data) {
 
         Uri imgUri = data.getData();
-        String imagePath = getRealPathFromURI(imgUri); // path 경로
+        String imagePath = getRealPathFromURI(imgUri);
         ExifInterface exif = null;
         try {
             exif = new ExifInterface(imagePath);
@@ -160,8 +158,8 @@ public class HomeActivity extends AppCompatActivity {
         int exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
         int exifDegree = exifOrientationToDegrees(exifOrientation);
 
-        Bitmap bitmap = BitmapFactory.decodeFile(imagePath);//경로를 통해 비트맵으로 전환
-        imgv.setImageBitmap(rotate(bitmap, exifDegree));//이미지 뷰에 비트맵 넣기
+        Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
+        imgv.setImageBitmap(rotate(bitmap, exifDegree));
 
     }
 
@@ -187,11 +185,8 @@ public class HomeActivity extends AppCompatActivity {
 
     public Bitmap rotate(Bitmap src, float degree) {
 
-        // Matrix 객체 생성
         Matrix matrix = new Matrix();
-        // 회전 각도 셋팅
         matrix.postRotate(degree);
-        // 이미지와 Matrix 를 셋팅해서 Bitmap 객체 생성
         return Bitmap.createBitmap(src, 0, 0, src.getWidth(),
                 src.getHeight(), matrix, true);
     }
