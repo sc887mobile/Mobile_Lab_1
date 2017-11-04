@@ -152,6 +152,7 @@ public class LoginActivity extends AppCompatActivity {
     public void reDirectToHomePage(View v){
         Intent redirect = new Intent(LoginActivity.this, HomeActivity.class);
         redirect.putExtra("uname", st_un);
+        finish();
         startActivity(redirect);
     }
 }

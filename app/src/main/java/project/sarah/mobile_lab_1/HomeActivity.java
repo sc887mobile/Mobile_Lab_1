@@ -120,6 +120,7 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         Intent intent_logout=new Intent(HomeActivity.this, MainActivity.class);
+                        finish();
                         startActivity(intent_logout);
                         return false;
                     }
@@ -129,6 +130,7 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    //This is for uploading image from gallary
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

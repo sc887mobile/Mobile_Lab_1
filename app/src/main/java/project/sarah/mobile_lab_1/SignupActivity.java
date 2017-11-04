@@ -60,9 +60,10 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void movePage(){
-        
+
         Intent intent1=new Intent(SignupActivity.this, HomeActivity.class);
         intent1.putExtra("uname", st_un);
+        finish();
         startActivity(intent1);
     }
 }
