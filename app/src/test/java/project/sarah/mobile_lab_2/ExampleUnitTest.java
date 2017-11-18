@@ -1,4 +1,4 @@
-package project.sarah.mobile_lab_1;
+package project.sarah.mobile_lab_2;
 
 import org.junit.Test;
 

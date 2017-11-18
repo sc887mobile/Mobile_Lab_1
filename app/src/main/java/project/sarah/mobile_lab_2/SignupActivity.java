@@ -1,4 +1,4 @@
-package project.sarah.mobile_lab_1;
+package project.sarah.mobile_lab_2;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -61,7 +61,7 @@ public class SignupActivity extends AppCompatActivity {
 
     public void movePage(){
 
-        Intent intent1=new Intent(SignupActivity.this, HomeActivity.class);
+        Intent intent1=new Intent(SignupActivity.this, ChooseActivity.class);
         intent1.putExtra("uname", st_un);
         finish();
         startActivity(intent1);

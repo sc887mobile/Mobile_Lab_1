@@ -1,4 +1,4 @@
-package project.sarah.mobile_lab_1;
+package project.sarah.mobile_lab_2;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -150,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void reDirectToHomePage(View v){
-        Intent redirect = new Intent(LoginActivity.this, HomeActivity.class);
+        Intent redirect = new Intent(LoginActivity.this, ChooseActivity.class);
         redirect.putExtra("uname", st_un);
         finish();
         startActivity(redirect);

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     style="@style/EditTextStyle"
-    tools:context="project.sarah.mobile_lab_1.LoginActivity">
+    tools:context="project.sarah.mobile_lab_2.LoginActivity">
 
     <TextView
         android:id="@+id/appName"
